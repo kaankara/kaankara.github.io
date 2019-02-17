@@ -1,0 +1,63 @@
+<h1>Projects Overview</h1>
+<hr>
+<div class="row">
+	<div class="col-md-4">
+	<p><b><a href="http://www.vldb.org/pvldb/vol12/p348-kara.pdf" target="_blank">ColumnML (VLDB'19)</a></b></p>
+	<p>
+	ColumnML investigates the integration of generalized linear model (GLM) training into column-store databases. A main characteristic of column-store databases is that they store data in a transformed format (mostly compression) that may make the data insuitable for ML tasks. We propose an FPGA-based specialized hardware solution that decompresses data on the fly and trains GLMs, all in a pipeline.
+	</p>
+	</div>
+	<!-- <div class="col-md-3">
+	<img class="img-responsive" src="./img/scd_engine.jpg" alt="" width="200">
+	</div> -->
+	<div class="col-md-8">
+	<img class="img-responsive" src="./img/scd_perf.png" alt="" width="400">
+	<p>
+		The FPGA can sustain the training rate even when it has to decompress and decrypt data on the fly, whereas the CPU performance drops when it has to perform these operations before training.
+	</p>
+	</div>
+</div>
+<hr>
+<div class="row">
+	<div class="col-md-4">
+	<p><b><a href="https://github.com/fpgasystems/spooNN" target="_blank">spooNN (DAC'18)</a></b></p>
+	<p>
+	spooNN is an FPGA-based neural network inference library. It was developed as a solution to the <a href="http://www.cse.cuhk.edu.hk/~byu/2018-DAC-SDC/index.html" target="_blank">System Design Contest</a> as part of Design Automation Conference 2018. The goal of the contest was to design an accurate, high throughput and low-power object detection accelerator.
+	</p>
+	<p>
+	We leveraged co-design to obtain the highest processing rate in the contest and ranked 2nd overall. We optimized a squeezenet topology, used heavy quantization for weights and activations, and designed a specialized pipeline on the FPGA from scratch.
+	</p>
+	</div>
+	<div class="col-md-8">
+	<p align="center"><b>Specialized object detection pipeline on the FPGA</b></p>
+	<img class="img-responsive" src="./img/folding_structure.png" alt="" width="350">
+	<br>
+	<p align="center"><font color="green">green box</font>: prediction, <font color="blue">blue box</font>: ground truth, <font color="red">red box</font>: anchor</p>
+	<img class="img-responsive" src="./img/drone.gif" alt="" width="300">
+	</div>
+</div>
+<hr>
+<div class="row">
+	<div class="col-md-12">
+	<p><b>ZipML (<a href="http://ieeexplore.ieee.org/abstract/document/7966672/" target="_blank">FCCM'17</a>, <a href="https://pdfs.semanticscholar.org/5267/194c6c4febe4c2189f4a5a42bd9392f9dc35.pdf" target="_blank">ICML'17</a>)</b></p>
+	<p>
+	After recent theory in the ML community has shown that quantizing input data in a stochastic way results in unbiased convergence for convex optmization problems, we thought about how this can be leveraged in systems to make end-to-end training faster. It turns out, when input data is quantized, SGD becomes more compute intensive. This is simply because more computation has to occur per input. An FPGA is a good candidate for this kind of computation because of the inherent parallelism and its suitability for quantized computation. We showed that SGD for generalized linear models can be accelerated up to an order of magnitude, thanks to the combination of quantized input data and FPGA-based computation.
+	</p>
+	</div>
+	<div class="col-md-12">
+	<img class="img-responsive" src="./img/zipml_arch.jpg" alt="" width="800">
+	</div>
+</div>
+<hr>
+<div class="row">
+	<div class="col-md-6">
+	<p><b><a href="http://dl.acm.org/citation.cfm?id=3035946" target="_blank">Data Partitioning (SIGMOD'17)</a></b></p>
+	<p>
+	Data partitioning is an expensive yet important workload in relational database engines. For instance, prior partitioning of large tables results in much faster join processing, becuase intermediate data structures fit into a CPU's cache. In this project we explore if partitioning can be improved using specialized hardware. Especially for high-fanout partitioning workloads, large and flexibly accessible write combining buffers are of great importance. We provide this by using distributed on-chip memory resources of an FPGA that has very high aggregate bandwidth even when accessed randomly. Furthermore, on an FPGA we can perform very complex hash functions without dropping the partitioning throughput.
+	</p>
+	</div>
+	<div class="col-md-6">
+	<img class="img-responsive" src="./img/parti_perf.png" alt="" width="300">
+	<p>Using hash partitioning reduced build+probe time by 35%. The FPGA matches the partitioning throughput of 8 cores in a Xeon CPU, despite having much less memory bandwidth (6.5 GB/s).</p>
+	</div>
+</div>

@@ -37,6 +37,7 @@
 	<script src="js/jquery.js"></script> 
 	<script> 
 	$(function(){
+		$("#projects").load("projects.html");
 		$("#education").load("education.html");
 		$("#publications").load("publications.html");
 		$("#experience").load("experience.html");
@@ -60,10 +61,10 @@
 					<a href="#">Research</a>
 				</li>
 				<li>
-					<a href="#education">Education</a>
+					<a href="#publications">Publications, Awards</a>
 				</li>
 				<li>
-					<a href="#publications">Publications</a>
+					<a href="#education">Education</a>
 				</li>
 				<li>
 					<a href="#experience">Professional Experience</a>
@@ -124,10 +125,19 @@
 
 						<h1>Research</h1>
 						<p>
-						I am interested in making data processing faster and more efficient in terms of resource and power usage. To achieve this, I am designing specialized hardware performing inherently parallel and compute/data intensive tasks that a conventional CPU is not suitable for. I am prototyping my designs on shared memory heterogeneous architectures combining CPUs and FPGAs.</p>
+						I am a PhD candidate at <a href="https://www.systems.ethz.ch/" target="_blank">Systems Group</a>, ETH Zurich. My research is about making advanced analytics faster and efficient in terms of resource and power usage. To achieve this, I am designing specialized hardware performing inherently parallel and compute/data intensive tasks that a conventional CPU is not suitable for. My goal is to provide insights into how the evolution of hardware in the era of big data shall continue after the end of Moore's Law.</p>
 						<p>
-						My goal is to provide insights into how the evolution of hardware in the era of big data shall continue after the end of Moore's Law. One general purpose approach can be the integration of an FPGA onto the CPU die, which then can be flexibly utilized to perform compute intensive tasks depending on the application. A more specialized approach is to develop processors with hardened macro circuits dedicated to each task to be accelerated, resulting in a highly heterogenous architecture.</p>
+						I am a former <a href="https://www.daad.de/en/" target="_blank">DAAD scholar</a> and received my BSc and MSc degrees from <a href="https://www.kit.edu" target="_blank">KIT</a> with distinction. Aside from pursuing my PhD, I occasionally work in <a href="#teaching">industry</a>, participate in <a href="https://github.com/fpgasystems/spooNN" target="_blank">engineering competitions</a> and enjoy the Swiss Alps skiing.
+						</p>
+
+						<!-- <p>
+						I am prototyping my designs on shared memory heterogeneous architectures combining CPUs and FPGAs.
+						My goal is to provide insights into how the evolution of hardware in the era of big data shall continue after the end of Moore's Law. One general purpose approach can be the integration of an FPGA onto the CPU die, which then can be flexibly utilized to perform compute intensive tasks depending on the application. A more specialized approach is to develop processors with hardened macro circuits dedicated to each task to be accelerated, resulting in a highly heterogenous architecture.</p> -->
 						
+						<p class="bottom-margin"></p>
+
+						<div id="projects"></div>
+
 						<p class="bottom-margin"></p>
 
 						<div id="publications"></div>
@@ -144,8 +154,9 @@
 
 						<div id="teaching">
 							<h1>Teaching</h1>
-							<p>Teaching assistant for </p>
+							<p>Teaching assistant for:</p>
 							<ul>
+								<li><a href="https://www.systems.ethz.ch/courses/fall2018/asl/" target="_blank">Advanced Systems Lab, Fall 2018</a>
 								<li><a href="https://www.systems.ethz.ch/courses/spring2018/data_mod_db" target="_blank">Data Modelling and Databases, Spring 2018</a>
 								<li><a href="https://www.systems.ethz.ch/courses/fall2017/asl/" target="_blank">Advanced Systems Lab, Fall 2017</a>
 								<li><a href="https://www.systems.ethz.ch/courses/spring2017/data_mod_db" target="_blank">Data Modelling and Databases, Spring 2017</a>
